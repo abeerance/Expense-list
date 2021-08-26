@@ -6,7 +6,7 @@ by making a class inheritable thanks to
 element forwading with props 
 -> Card is here seen as a wrapper!
 */
-
+import React from 'react';
 import './Cards.css'
 
 const Card = (props) => {

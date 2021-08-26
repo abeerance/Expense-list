@@ -1,8 +1,8 @@
 /* eslint-disable */
-
+import React from 'react';
 import ExpenseDate from './ExpenseDate';
 import Expenses from './Expenses';
-import Card from './Cards';
+import Card from '../UI/Cards';
 import './ExpenseItem.css';
 
 

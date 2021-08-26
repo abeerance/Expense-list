@@ -1,9 +1,9 @@
 /* eslint-disable */
-
+import React from 'react';
 import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
-import Card from './Cards';
-import App from '../App';
+import Card from '../UI/Cards';
+import App from '../../App';
 
 const Expenses = (props) => {
     {/* Expenses */}

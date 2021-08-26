@@ -1,5 +1,6 @@
 /* eslint-disable */
-import Expenses from "./components/Expenses";
+import React from 'react';
+import Expenses from './components/Expenses/Expenses';
 
 const App = (props) => {
     const expenses = [
