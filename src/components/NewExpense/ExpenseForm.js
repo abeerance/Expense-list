@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     // By default onChange value is a string that's why useState are defined as strings
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
@@ -73,7 +73,9 @@ const ExpenseForm = () => {
             amount: enteredAmount,
             date: new Date(enteredDate),
         };
-        console.log(expenseData)
+
+        // Execute onSaveExpenseData from NewExpense.js with help of props to pass data to the parent (NewExpense.js)
+        props.onSaveExpenseData(expenseData);
 
         // Resets the enterd value on a submit or refresh - VERY IMPORTANT when using forms
         setEnteredTitle("");

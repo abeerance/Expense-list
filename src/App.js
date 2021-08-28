@@ -1,9 +1,10 @@
 /* eslint-disable */
 import React from 'react';
+import ExpenseDate from './components/Expenses/ExpenseDate';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
-const App = (props) => {
+const App = () => {
     const expenses = [
         {
             id: "e1",
@@ -31,9 +32,15 @@ const App = (props) => {
         },
     ];
 
+    const addExpenseHandler = expense => {
+        console.log('in app.js')
+        console.log(expense);
+    }
+
     return (
         <div>
-            <NewExpense/>
+            {/* Call on AddExpense function from NewExpense to get data and forward it to addExpenseHandler function */}
+            <NewExpense onAddExpense = {addExpenseHandler} />
             <Expenses items={expenses}/>
         </div>
     );
