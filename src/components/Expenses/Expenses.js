@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Cards";
 import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
     const [filteredYear, setFilteredYear] = useState("2020");
@@ -17,6 +17,7 @@ const Expenses = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     });
 
+    // Return JSX-Snippet
     return (
         <div>
             <Card className="expenses">
@@ -24,19 +25,7 @@ const Expenses = (props) => {
                     selected={filteredYear}
                     onChangeFilter={filterChangeHandler}
                 />
-                {/* forEach item in props.item, transform expense-Item to ExpenseItem; Conditional output when emtpy */}
-                {filteredExpenses.length === 0 ? (
-                    <p>No expenses found.</p>
-                ) : (
-                    filteredExpenses.map((expense) => (
-                        <ExpenseItem
-                            key={expense.id}
-                            title={expense.title}
-                            amount={expense.amount}
-                            date={expense.date}
-                        />
-                    ))
-                )}
+                <ExpensesList items={filteredExpenses}/>
             </Card>
         </div>
     );
