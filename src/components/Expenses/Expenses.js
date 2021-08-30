@@ -13,9 +13,9 @@ const Expenses = (props) => {
     };
 
     // Filter items according to the year in attribute
-    const filteredExpenses = props.items.filter(expense => {
+    const filteredExpenses = props.items.filter((expense) => {
         return expense.date.getFullYear().toString() === filteredYear;
-    })
+    });
 
     return (
         <div>
@@ -24,15 +24,19 @@ const Expenses = (props) => {
                     selected={filteredYear}
                     onChangeFilter={filterChangeHandler}
                 />
-                {/* forEach item in props.item, transform expense-Item to ExpenseItem */}
-                {filteredExpenses.map((expense) => (
-                    <ExpenseItem
-                        key={expense.id}
-                        title={expense.title}
-                        amount={expense.amount}
-                        date={expense.date}
-                    />
-                ))}
+                {/* forEach item in props.item, transform expense-Item to ExpenseItem; Conditional output when emtpy */}
+                {filteredExpenses.length === 0 ? (
+                    <p>No expenses found.</p>
+                ) : (
+                    filteredExpenses.map((expense) => (
+                        <ExpenseItem
+                            key={expense.id}
+                            title={expense.title}
+                            amount={expense.amount}
+                            date={expense.date}
+                        />
+                    ))
+                )}
             </Card>
         </div>
     );
