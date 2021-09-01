@@ -29,7 +29,7 @@ const NewExpense = (props) => {
 
     return (
         <div className="new-expense">
-            {/* Check isDditing is false */}
+            {/* Check isEdditing is false */}
             {!isEditing && (
                 <button onClick={startEditingHandler}>Add New Expense</button>
             )}

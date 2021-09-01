@@ -67,7 +67,7 @@ const ExpenseForm = (props) => {
         // to updated values in an object
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate),
         };
 
